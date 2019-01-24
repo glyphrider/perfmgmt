@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Direct report:</strong>
+  <%= @meeting.direct_report_id %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @meeting.notes %>
+</p>
+
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Back', direct_reports_path %>
