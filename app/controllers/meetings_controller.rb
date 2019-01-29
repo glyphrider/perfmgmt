@@ -16,7 +16,8 @@ class MeetingsController < ApplicationController
   def new
     @direct_report = DirectReport.find(params[:direct_report_id])
     @meeting = Meeting.new
-    @meeting.time = Time.current
+    mtim = Time.current
+    @meeting.time = Time.local(mtim.year,mtim.month,mtim.day,mtim.hour,(mtim.min / 15) * 15)
   end
 
   # GET /meetings/1/edit
