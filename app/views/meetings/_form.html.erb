@@ -13,17 +13,17 @@
 
   <%= f.hidden_field :direct_report_id , :value=>params[:direct_report_id] %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :time %>
-    <%= f.datetime_field :time %>
+    <%= f.datetime_field :time, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :notes %>
-    <%= f.text_area :notes %>
+    <%= f.text_area :notes, size: "40x15", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-default" %>
   </div>
 <% end %>

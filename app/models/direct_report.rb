@@ -5,11 +5,11 @@ class DirectReport < ApplicationRecord
   end
   
   def last_meeting_time_for_view
-		meetings.any? ? meetings.last.time : "none"
-	end
+    meetings.any? ? meetings.order('time desc').first.time.strftime("%m/%d %I:%M%p") : "none"
+  end
 
   def last_meeting_time
-    meetings.any? ? meetings.last.time : bogus_time
+    meetings.any? ? meetings.order('time desc').first.time : bogus_time
   end
   
   def bogus_time

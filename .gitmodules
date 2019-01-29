@@ -1,0 +1,3 @@
+[submodule "app/assets/images/open-iconic"]
+	path = app/assets/images/open-iconic
+	url = https://github.com/iconic/open-iconic

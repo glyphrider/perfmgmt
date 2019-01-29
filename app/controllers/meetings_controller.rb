@@ -10,6 +10,7 @@ class MeetingsController < ApplicationController
   # GET /meetings/1
   # GET /meetings/1.json
   def show
+    @direct_report = DirectReport.find(params[:direct_report_id])
   end
 
   # GET /meetings/new

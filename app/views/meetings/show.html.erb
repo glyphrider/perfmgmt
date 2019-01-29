@@ -1,9 +1,8 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Direct report:</strong>
-  <%= @meeting.direct_report_id %>
-</p>
+<h1>Meeting with <%= @direct_report.name %></h1>
+<p>at <%= @meeting.time.strftime("%m/%d %I:%M%p") %></p>
 
 <p>
   <strong>Notes:</strong>
@@ -12,3 +11,4 @@
 
 <%= link_to 'Edit', edit_direct_report_meeting_path(@meeting.direct_report_id,@meeting.id) %> |
 <%= link_to 'Back', direct_reports_path %>
+</div>
