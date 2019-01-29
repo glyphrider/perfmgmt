@@ -10,5 +10,5 @@
   <%= @meeting.notes %>
 </p>
 
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Edit', edit_direct_report_meeting_path(@meeting.direct_report_id,@meeting.id) %> |
 <%= link_to 'Back', direct_reports_path %>

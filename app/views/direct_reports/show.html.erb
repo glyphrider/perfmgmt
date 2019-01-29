@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @direct_report.name %>
-</p>
+<h1>
+  Meetings with <%= @direct_report.name %>
+</h1>
 
+<table>
+  <tr><th>Date</th><th colspan="2">Notes</th></tr>
 <% @direct_report.meetings.order('time desc').each do |meeting| %>
-	<p><%= meeting.time %> : <%= meeting.notes %></p>
+	<tr><td><%= link_to meeting.time, direct_report_meeting_path(@direct_report,meeting) %></td><td><%= meeting.notes %></td><td><%= link_to 'Destroy', direct_report_meeting_path(@direct_report,meeting), method: :delete, data: { confirm: 'Are you sure?' } %></td></tr>
 <% end %>
+</table>
 
 <%= link_to 'Edit', edit_direct_report_path(@direct_report) %> |
 <%= link_to 'Back', direct_reports_path %>

@@ -11,14 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.hidden_field :direct_report_id , :value=>params[:direct_report_id] %>
-    <%= @direct_report.name %>
-  </div>
+  <%= f.hidden_field :direct_report_id , :value=>params[:direct_report_id] %>
 
   <div class="field">
-	  <%= f.label :time %>
-		<%= f.text_field :time %>
+    <%= f.label :time %>
+    <%= f.datetime_field :time %>
   </div>
 
   <div class="field">

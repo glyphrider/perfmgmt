@@ -16,11 +16,12 @@ class MeetingsController < ApplicationController
   def new
     @direct_report = DirectReport.find(params[:direct_report_id])
     @meeting = Meeting.new
-    @meeting.time = Time.now
+    @meeting.time = Time.current
   end
 
   # GET /meetings/1/edit
   def edit
+    @direct_report = DirectReport.find(params[:direct_report_id])
   end
 
   # POST /meetings
@@ -71,6 +72,6 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:direct_report_id, :notes)
+      params.require(:meeting).permit(:direct_report_id, :time, :notes)
     end
 end
