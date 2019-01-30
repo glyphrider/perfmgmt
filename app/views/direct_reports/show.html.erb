@@ -4,18 +4,24 @@
   Meetings with <%= @direct_report.name %>
 </h1>
 
-<div class="row">
-  <div class="col-md-2">Date</div>
-  <div class="col-md-7">Notes</div>
-  <div class="col-md-1 text-center">Delete</div>
-</div>
-<% @direct_report.meetings.order('time desc').each do |meeting| %>
-<div class="row">
-  <div class="col-md-2"><%= link_to meeting.time.strftime("%m/%d %I:%M%p"), direct_report_meeting_path(@direct_report,meeting) %></div>
-  <div class="col-md-7"><%= meeting.notes %></div>
-  <div class="col-md-1 text-center"><%= link_to image_tag("open-iconic/svg/trash.svg"), direct_report_meeting_path(@direct_report,meeting), method: :delete, data: { confirm: 'Are you sure?' } %></div>
-</div>
-<% end %>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Notes</th>
+      <th scope="col" class="text-center">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @direct_report.meetings.order('time desc').each do |meeting| %>
+    <tr>
+      <td><%= link_to meeting.time.strftime("%m/%d %I:%M%p"), direct_report_meeting_path(@direct_report,meeting) %></td>
+      <td><%= @markdown.render(meeting.notes).html_safe %></td>
+      <td class="text-center"><%= link_to image_tag("open-iconic/svg/trash.svg"), direct_report_meeting_path(@direct_report,meeting), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_direct_report_path(@direct_report) %> |
 <%= link_to 'Back', direct_reports_path %>

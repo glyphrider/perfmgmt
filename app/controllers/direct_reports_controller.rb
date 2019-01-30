@@ -1,3 +1,5 @@
+require 'redcarpet'
+
 class DirectReportsController < ApplicationController
   before_action :set_direct_report, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +12,7 @@ class DirectReportsController < ApplicationController
   # GET /direct_reports/1
   # GET /direct_reports/1.json
   def show
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
   end
 
   # GET /direct_reports/new

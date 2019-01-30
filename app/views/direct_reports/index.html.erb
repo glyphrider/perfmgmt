@@ -2,25 +2,32 @@
 
 <h1>Direct Reports</h1>
 
-<div class="row">
-	<div class="col-md-3">Name</div>
-	<div class="col-md-2">Last Meeting</div>
-	<div class="col-md-1 text-center">Meet</div>
-	<div class="col-md-1 text-center">Show</div>
-	<div class="col-md-1 text-center">Edit</div>
-	<div class="col-md-1 text-center">Delete</div>
-</div>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+	    <th scope="col">Name</th>
+	    <th scope="col">Last Meeting</th>
+	    <th scope="col" class="text-center">Meet</th>
+	    <th scope="col" class="text-center">Show</th>
+	    <th scope="col" class="text-center">Edit</th>
+	    <th scope="col" class="text-center">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
 
-<% @direct_reports.each do |direct_report| %>
-	<div class="row">
-		<div class="col-md-3"><%= direct_report.name %></div>
-		<div class="col-md-2"><%= direct_report.last_meeting_time_for_view %></div>
-		<div class="col-md-1 text-center"><%= link_to image_tag("open-iconic/svg/people.svg"), new_direct_report_meeting_path(direct_report) %></div>
-		<div class="col-md-1 text-center"><%= link_to image_tag("open-iconic/svg/magnifying-glass.svg"), direct_report %></div>
-		<div class="col-md-1 text-center"><%= link_to image_tag("open-iconic/svg/pencil.svg"), edit_direct_report_path(direct_report) %></div>
-		<div class="col-md-1 text-center"><%= link_to image_tag("open-iconic/svg/trash.svg"), direct_report, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-	</div>
-<% end %>
+    <% @direct_reports.each do |direct_report| %>
+    <tr>
+		  <td><%= direct_report.name %></td>
+		  <td><%= direct_report.last_meeting_time_for_view %></td>
+		  <td class="text-center"><%= link_to image_tag("open-iconic/svg/people.svg"), new_direct_report_meeting_path(direct_report) %></td>
+		  <td class="text-center"><%= link_to image_tag("open-iconic/svg/magnifying-glass.svg"), direct_report %></td>
+		  <td class="text-center"><%= link_to image_tag("open-iconic/svg/pencil.svg"), edit_direct_report_path(direct_report) %></td>
+		  <td class="text-center"><%= link_to image_tag("open-iconic/svg/trash.svg"), direct_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
 
 <br>
 
