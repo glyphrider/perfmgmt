@@ -1,8 +1,6 @@
-<div class="container">
 <h1>Editing Meeting</h1>
 
 <%= render 'form', meeting: @meeting %>
 
 <%= link_to 'Show', direct_report_meeting_path(@meeting.direct_report_id,@meeting.id) %> |
 <%= link_to 'Back', direct_reports_path %>
-</div>
