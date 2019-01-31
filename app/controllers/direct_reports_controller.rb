@@ -64,6 +64,10 @@ class DirectReportsController < ApplicationController
     end
   end
 
+  def redirect
+    redirect_to direct_reports_url
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_direct_report

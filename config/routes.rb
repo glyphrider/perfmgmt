@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'direct_reports#redirect'
   resources :direct_reports do
     resources :meetings
   end
