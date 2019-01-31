@@ -24,7 +24,8 @@ production:
   adapter: mysql2
   encoding: utf8
   pool: 5
+  database: meetings
   username: meetings
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/run/mysqld/mysqld.sock
-  database: meetings
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] || '3306' %>
