@@ -1,0 +1,7 @@
+<% # views/users/new.html.erb %>
+<% if current_user %>
+  <%= "Welcome #{current_user.name || current_user.login}" %>
+<p> <%= link_to "Signout", "/signout" %> </p>
+<% else %>
+  <%= link_to "Sign in with Github", "/auth/github" %>
+<% end %>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'direct_reports#redirect'
+  root 'users#new'
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", :as => :signout
   resources :direct_reports do
     resources :meetings
   end
