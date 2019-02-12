@@ -1,5 +1,5 @@
-<h1>New Meeting with <%= @direct_report.name %></h1>
+<h1>New Meeting with <%= @user.name %></h1>
 
 <%= render 'form', meeting: @meeting %>
 
-<%= link_to 'Back', direct_reports_path %>
+<%= link_to 'Back', users_path %>

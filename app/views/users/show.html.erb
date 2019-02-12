@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  Meetings with <%= @user.name %>
+</h1>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Notes</th>
+      <th scope="col" class="text-center">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.meetings.order('time desc').each do |meeting| %>
+    <tr>
+      <td><%= link_to meeting.time.strftime("%m/%d %I:%M%p"), user_meeting_path(@user,meeting) %></td>
+      <td><%= @markdown.render(meeting.notes).html_safe %></td>
+      <td class="text-center"><%= link_to image_tag("open-iconic/svg/trash.svg"), user_meeting_path(@user,meeting), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

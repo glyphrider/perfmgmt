@@ -1,3 +1,3 @@
 class Meeting < ApplicationRecord
-	belongs_to :direct_report
+	belongs_to :user
 end

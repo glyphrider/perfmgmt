@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Direct Reports</h1>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+	    <th scope="col">Name</th>
+	    <th scope="col">Last Meeting</th>
+	    <th scope="col" class="text-center">Meet</th>
+	    <th scope="col" class="text-center">Show</th>
+	    <th scope="col" class="text-center">Edit</th>
+	    <th scope="col" class="text-center">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @users.each do |user| %>
+    <tr>
+		  <td><%= user.name %></td>
+		  <td><%= user.last_meeting_time_for_view %></td>
+		  <td class="text-center"><%= link_to image_tag("open-iconic/svg/people.svg"), new_user_meeting_path(user) %></td>
+		  <td class="text-center"><%= link_to image_tag("open-iconic/svg/magnifying-glass.svg"), user %></td>
+		  <td class="text-center"><%= link_to image_tag("open-iconic/svg/pencil.svg"), edit_user_path(user) %></td>
+		  <td class="text-center"><%= link_to image_tag("open-iconic/svg/trash.svg"), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br />
+
+<% if current_user.admin? %>
+<div class="">
+<%= link_to 'New User', new_user_path, :class => "btn btn-secondary" %>
+</div>
+<br />
+<% end %>

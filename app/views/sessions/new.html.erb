@@ -1,0 +1,16 @@
+<% # views/users/new.html.erb %>
+<br />
+<div class="jumbotron">
+<% if current_user %>
+    <h1 class="display-4"><%= "Welcome, #{current_user.name}" %></h1>
+    <p class="lead">to the Software Development portal for Performance Management.</p>
+    <hr class="my-4" />
+    <% if current_user.reports.any? %>
+      <h2><%= link_to "Meet with Direct Reports", users_path %></h2>
+    <% end %>
+    <h2>Peer feedback form</h2>
+    <p><%= link_to "Signout", "/signout", class: "btn btn-primary btn-large" %></p>
+<% else %>
+  <p><%= link_to "Sign in with Github", "/auth/github", class: "btn btn-primary btn-large" %></p>
+<% end %>
+</div>

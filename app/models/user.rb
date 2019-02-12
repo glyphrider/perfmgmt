@@ -1,11 +1,29 @@
-# user.rb
-class User < ActiveRecord::Base
+class User < ApplicationRecord
+  has_many :meetings
+  # belongs_to :supervisor, :class_name => 'User', :foreign_key => 'supervisor_id'
+  has_many :reports, :class_name => 'User', :foreign_key => 'supervisor_id'
  
-  def self.create_with_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
+  def supervisor
+    if supervisor_id
+      User.find(supervisor_id)
+    else
+      nil
     end
+  end
+
+  def self.all_reports_with_or_without_a_meeting(current_user)
+    current_user.reports.sort_by(&:last_meeting_time)
+  end
+  
+  def last_meeting_time_for_view
+    meetings.any? ? meetings.order('time desc').first.time.strftime("%m/%d %I:%M%p") : "none"
+  end
+
+  def last_meeting_time
+    meetings.any? ? meetings.order('time desc').first.time : bogus_time
+  end
+  
+  def bogus_time
+    Time.current.beginning_of_year
   end
 end

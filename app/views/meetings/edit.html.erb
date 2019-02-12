@@ -2,5 +2,5 @@
 
 <%= render 'form', meeting: @meeting %>
 
-<%= link_to 'Show', direct_report_meeting_path(@meeting.direct_report_id,@meeting.id) %> |
-<%= link_to 'Back', direct_reports_path %>
+<%= link_to 'Show', user_meeting_path(@meeting.user_id,@meeting.id) %> |
+<%= link_to 'Back', users_path %>

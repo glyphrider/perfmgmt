@@ -10,12 +10,12 @@ class MeetingsController < ApplicationController
   # GET /meetings/1
   # GET /meetings/1.json
   def show
-    @direct_report = DirectReport.find(params[:direct_report_id])
+    @user = User.find(params[:user_id])
   end
 
   # GET /meetings/new
   def new
-    @direct_report = DirectReport.find(params[:direct_report_id])
+    @user = User.find(params[:user_id])
     @meeting = Meeting.new
     mtim = Time.current
     @meeting.time = Time.local(mtim.year,mtim.month,mtim.day,mtim.hour,(mtim.min / 15) * 15)
@@ -23,22 +23,26 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/1/edit
   def edit
-    @direct_report = DirectReport.find(params[:direct_report_id])
+    @user = User.find(params[:user_id])
   end
 
   # POST /meetings
   # POST /meetings.json
   def create
     @meeting = Meeting.new(meeting_params)
-
-    respond_to do |format|
-      if @meeting.save
-        format.html { redirect_to direct_reports_url, notice: 'Meeting was successfully created.' }
-        format.json { render :show, status: :created, location: @meeting }
-      else
-        format.html { render :new }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
+    subject = User.find(@meeting.user_id)
+    if subject.supervisor_id == current_user.id
+      respond_to do |format|
+        if @meeting.save
+          format.html { redirect_to users_url, notice: 'Meeting was successfully created.' }
+          format.json { render :show, status: :created, location: @meeting }
+        else
+          format.html { render :new }
+          format.json { render json: @meeting.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      format.html { redirect_to users_url, notice: 'Meeting was not valid' }
     end
   end
 
@@ -47,7 +51,7 @@ class MeetingsController < ApplicationController
   def update
     respond_to do |format|
       if @meeting.update(meeting_params)
-        format.html { redirect_to direct_reports_url, notice: 'Meeting was successfully updated.' }
+        format.html { redirect_to users_url, notice: 'Meeting was successfully updated.' }
         format.json { render :show, status: :ok, location: @meeting }
       else
         format.html { render :edit }
@@ -61,7 +65,7 @@ class MeetingsController < ApplicationController
   def destroy
     @meeting.destroy
     respond_to do |format|
-      format.html { redirect_to direct_reports_url, notice: 'Meeting was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'Meeting was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,10 +74,14 @@ class MeetingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_meeting
       @meeting = Meeting.find(params[:id])
+      subject = User.find(@meeting.user_id)
+      unless subject.supervisor_id == current_user.id
+        @meeting = nil
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:direct_report_id, :time, :notes)
+      params.require(:meeting).permit(:user_id, :time, :notes)
     end
 end

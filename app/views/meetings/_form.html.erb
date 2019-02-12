@@ -1,4 +1,4 @@
-<%= form_for [@direct_report, @meeting] do |f| %>
+<%= form_for [@user, @meeting] do |f| %>
   <% if @meeting.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :direct_report_id , :value=>params[:direct_report_id] %>
+  <%= f.hidden_field :user_id , :value=>params[:user_id] %>
 
   <div class="field form-group">
     <%= f.label :time %>

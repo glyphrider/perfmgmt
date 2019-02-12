@@ -10,28 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190211183644) do
-
-  create_table "direct_reports", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20190212180803) do
 
   create_table "meetings", force: :cascade do |t|
-    t.integer  "direct_report_id"
+    t.integer  "user_id"
     t.datetime "time"
     t.text     "notes"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "login"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "supervisor_id"
+    t.string   "github_id"
+    t.boolean  "admin",         default: false
   end
 
 end
