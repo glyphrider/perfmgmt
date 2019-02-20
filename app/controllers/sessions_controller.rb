@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:create, :new]
+  skip_before_action :require_login, only: [:create, :new, :index]
 
   def create
     auth = request.env["omniauth.auth"]
@@ -19,6 +19,9 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to root_url, :notice => "Signed out!"
+  end
+
+  def index
   end
  
 end
