@@ -1,0 +1,100 @@
+    <div class="card-body">
+      <h5>Concepts</h5>
+      <div class="card-text">
+        <p>Frameworks, Programming Languages, and Software Design Concepts</p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">0</th>
+              <td>Fails to meet minimum expectations</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                <p class="mb-0">Displays a fundamental understanding of the concepts of software developmen</p>
+                <p class="mb-0">Produces meaningful code in at least one modern language</p>
+                <p class="mb-0">Displays an interest and/or proficiency in learning new concepts, languages, and frameworks</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>
+                <p class="mb-0">Displays comfort with the relevant team's languages and frameworks</p>
+                <p class="mb-0">Produces functional results in a manner that is consistent with the complexity of a given task</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>
+                <p class="mb-0">Displays mastery over the relevant team's languages and frameworks</p>
+                <p class="mb-0">Produces results that are both optimized and expedient</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>
+                <p class="mb-0">Is familiar with the <i>leading edge</i> of concepts, languages, and frameworks relevant to the team's endeavors</p>
+                <p class="mb-0">Is familiar with the concepts, languages, and frameworks utilized by other teams</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</td>
+              <td>
+                <p>Vastly exceeds all expectations</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="field form-group">
+        <%= f.label :concepts_score, "Score" %>
+        <div class="row">
+          <div class="col">
+            <%= f.radio_button(:concepts_score,"0",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:concepts_score,"1",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:concepts_score,"2",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:concepts_score,"3",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:concepts_score,"4",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:concepts_score,"5",{:class => "form-control"}) %>
+          </div>
+          <div class="col text-center">
+            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_concepts_score_clear', type: 'button', onclick: "document.getElementById('review_concepts_score_0').checked = false; document.getElementById('review_concepts_score_1').checked = false; document.getElementById('review_concepts_score_2').checked = false; document.getElementById('review_concepts_score_3').checked = false; document.getElementById('review_concepts_score_4').checked = false; document.getElementById('review_concepts_score_5').checked = false;", class: 'btn btn-light' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <%= f.label(:concepts_score_0,"0",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:concepts_score_1,"1",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:concepts_score_2,"2",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:concepts_score_3,"3",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:concepts_score_4,"4",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:concepts_score_5,"5",{:class => ""}) %>
+          </div>
+          <div class="col text-center"><sm><i>Clear</i></sm></div>
+        </div>
+      </div>
+  
+      <div class="field form-group">
+        <%= f.label :concepts_notes, "Comments" %>
+        <%= f.text_area :concepts_notes, size: "40x5", class: "form-control" %>
+      </div>

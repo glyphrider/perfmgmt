@@ -1,0 +1,103 @@
+    <div class="card-body">
+      <h5>Team Communication</h5>
+      <div class="card-text">
+        <p>Contributing to team communication</p>
+        <p>
+          <ul>
+            <li><i>Constructive criticism</i> - All positions should be able to both give and receive constructive criticism in a respectful manner, and in the proper context (i.e. pull requests, peer reviews, etc.)</li>
+            <li><i>Debate instead of argue</i> - The manner in which all positions resolve conflict should be level headed and respectful.</li>
+            <li><i>Honesty</i> - Willing to say “I don’t know” when appropriate.  Supports an environment of trust and openness.</li>
+            <li><i>Timely</i> - Responds clearly to team messages (e.g. Email, Slack, PR Review, etc.) in a timely manner whether in or out of the office.  Responds clearly to meeting requests and attends meetings on time.</li>
+          </ul>
+        </p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">0</th>
+              <td>Fails to meet minimum expectations</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                <p class="mb-0">Participates in discussions when asked or needed</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>
+                <p class="mb-0">Actively participates in discussions</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>
+                <p class="mb-0">Facilitates team discussions and encourages team members to contribute to the best of their abilities</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>
+                <p class="mb-0">From an organizational perspective, facilitates team discussions and guides them toward effective outcomes</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</td>
+              <td>
+                <p>Vastly exceeds all expectations</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="field form-group">
+        <%= f.label :teaming_score, "Score" %>
+        <div class="row">
+          <div class="col">
+            <%= f.radio_button(:teaming_score,"0",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:teaming_score,"1",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:teaming_score,"2",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:teaming_score,"3",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:teaming_score,"4",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:teaming_score,"5",{:class => "form-control"}) %>
+          </div>
+          <div class="col text-center">
+            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_teaming_score_clear', type: 'button', onclick: "document.getElementById('review_teaming_score_0').checked = false; document.getElementById('review_teaming_score_1').checked = false; document.getElementById('review_teaming_score_2').checked = false; document.getElementById('review_teaming_score_3').checked = false; document.getElementById('review_teaming_score_4').checked = false; document.getElementById('review_teaming_score_5').checked = false;", class: 'btn btn-light' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <%= f.label(:teaming_score_0,"0",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:teaming_score_1,"1",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:teaming_score_2,"2",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:teaming_score_3,"3",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:teaming_score_4,"4",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:teaming_score_5,"5",{:class => ""}) %>
+          </div>
+          <div class="col text-center"><sm><i>Clear</i></sm></div>
+        </div>
+      </div>
+  
+      <div class="field form-group">
+        <%= f.label :teaming_notes, "Comments" %>
+        <%= f.text_area :teaming_notes, size: "40x5", class: "form-control" %>
+      </div>

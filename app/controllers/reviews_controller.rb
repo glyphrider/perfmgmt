@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
-    @review = Review.find(:review_id)
   end
 
   # GET /reviews/new
@@ -73,10 +72,11 @@ class ReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_review
       @review = Review.find(params[:id])
-      subject = User.find(@review.user_id)
-      unless subject.supervisor_id == current_user.id
+      subject = User.find(@review.subject_id)
+      unless subject.supervisor == current_user || review.author == current_user
         @review = nil
       end
+      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

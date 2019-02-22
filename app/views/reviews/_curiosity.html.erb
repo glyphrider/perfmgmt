@@ -1,0 +1,100 @@
+    <div class="card-body">
+      <h5>Curiosity</h5>
+      <div class="card-text">
+        <p>Desire to learn, willingness to <i>ask why</i>, interest in technology</p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">0</th>
+              <td>Fails to meet minimum expectations</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                <p class="mb-0">Displays curiosity about the codebase and product with which they are working</p>
+                <p class="mb-0">When appropriate, asks why certain practices were implemented and why certain processes should be implemented</p>
+                <p class="mb-0">Is interested to learn more about broarder topics such as web development, computer science, etc.</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>
+                <p class="mb-0">Presents alternate views when asking why certain practices were implemented and why certain processes should be implemented</p>
+                <p class="mb-0">Has desire to try different approaches</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>
+                <p class="mb-0">Desire to understand the why certain practices were implemented and why certain processes should be implemented</p>
+                <p class="mb-0">Drive to <i>fail fast</i> in order to achieve success</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>
+                <p class="mb-0">Exemplifies a strong desire to learn about the product with which they are working</p>
+                <p class="mb-0">When appropriate, independently understands why certain practices were implemented and drives teams toward improved results</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</td>
+              <td>
+                <p>Vastly exceeds all expectations</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="field form-group">
+        <%= f.label :curiosity_score, "Score" %>
+        <div class="row">
+          <div class="col">
+            <%= f.radio_button(:curiosity_score,"0",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:curiosity_score,"1",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:curiosity_score,"2",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:curiosity_score,"3",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:curiosity_score,"4",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:curiosity_score,"5",{:class => "form-control"}) %>
+          </div>
+          <div class="col text-center">
+            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_curiosity_score_clear', type: 'button', onclick: "document.getElementById('review_curiosity_score_0').checked = false; document.getElementById('review_curiosity_score_1').checked = false; document.getElementById('review_curiosity_score_2').checked = false; document.getElementById('review_curiosity_score_3').checked = false; document.getElementById('review_curiosity_score_4').checked = false; document.getElementById('review_curiosity_score_5').checked = false;", class: 'btn btn-light' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <%= f.label(:curiosity_score_0,"0",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:curiosity_score_1,"1",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:curiosity_score_2,"2",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:curiosity_score_3,"3",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:curiosity_score_4,"4",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:curiosity_score_5,"5",{:class => ""}) %>
+          </div>
+          <div class="col text-center"><sm><i>Clear</i></sm></div>
+        </div>
+      </div>
+  
+      <div class="field form-group">
+        <%= f.label :curiosity_notes, "Comments" %>
+        <%= f.text_area :curiosity_notes, size: "40x5", class: "form-control" %>
+      </div>

@@ -15,9 +15,24 @@
     <%= f.label :subject_id, "Subject", { class: "form-control" } %>
     <%= f.collection_select :subject_id, User.all, :id, :name, {}, { class: "form-control custom-select custom-select-lg" } %>
   </div>
-  <%= render 'professional_attitude', review: @review, f: f %>
 
+  <%= render 'professional_attitude', review: @review, f: f %>
+  <%= render 'personal_attitude', review: @review, f: f %>
+  <%= render 'communication', review: @review, f: f %>
+  <%= render 'technical_skills', review: @review, f: f %>
+
+  <div class="card">
+    <div class="card-header">
+      <h4>Comments</h4>
+    </div>
+    <div class="card-body">
+      <%= f.label :notes, "General comments not applicable to any of the above categories", { class: "form-control" } %>
+      <%= f.text_area :notes, size: "40x8", class: "form-control" %>
+    </div>
+  </div>
+  
   <br />
+
   <div class="actions">
     <p><%= f.submit class: "btn btn-primary btn-default" %></p>
   </div>

@@ -1,0 +1,101 @@
+    <div class="card-body">
+      <h5>Best Practices</h5>
+      <div class="card-text">
+        <p>Submits constructive feedback on Pull Requests made within the team</p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">0</th>
+              <td>Fails to meet minimum expectations</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                <p class="mb-0">Understands the practices and importance of <i>clean code</i> and other <i>best practices</i>, and is willing to learn those in use at VHT</p>
+                <p class="mb-0">Understands the practices and importance of TDD</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>
+                <p class="mb-0">Follows accepted <i>best practices</i> under direction of senior resources</p>
+                <p class="mb-0">Produces tests that accurately describe the product's function, independent of the product itself</p>
+                <p class="mb-0">Understands and implements the practices of <i>clean code</i></p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>
+                <p class="mb-0">Leads their team in the implementation of accepted <i>best practices</i></p>
+                <p class="mb-0">Produce clear and concise tests</p>
+                <p class="mb-0">Teaches <i>clean code</i> practices</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>
+                <p class="mb-0">Reviews emerging <i>best practices</i> and directs the practical implementation into established development processes</p>
+                <p class="mb-0">Champions <i>clean coding</i> practices</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</td>
+              <td>
+                <p>Vastly exceeds all expectations</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="field form-group">
+        <%= f.label :practices_score, "Score" %>
+        <div class="row">
+          <div class="col">
+            <%= f.radio_button(:practices_score,"0",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:practices_score,"1",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:practices_score,"2",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:practices_score,"3",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:practices_score,"4",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:practices_score,"5",{:class => "form-control"}) %>
+          </div>
+          <div class="col text-center">
+            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_practices_score_clear', type: 'button', onclick: "document.getElementById('review_practices_score_0').checked = false; document.getElementById('review_practices_score_1').checked = false; document.getElementById('review_practices_score_2').checked = false; document.getElementById('review_practices_score_3').checked = false; document.getElementById('review_practices_score_4').checked = false; document.getElementById('review_practices_score_5').checked = false;", class: 'btn btn-light' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <%= f.label(:practices_score_0,"0",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:practices_score_1,"1",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:practices_score_2,"2",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:practices_score_3,"3",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:practices_score_4,"4",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:practices_score_5,"5",{:class => ""}) %>
+          </div>
+          <div class="col text-center"><sm><i>Clear</i></sm></div>
+        </div>
+      </div>
+  
+      <div class="field form-group">
+        <%= f.label :practices_notes, "Comments" %>
+        <%= f.text_area :practices_notes, size: "40x5", class: "form-control" %>
+      </div>
