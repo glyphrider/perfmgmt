@@ -2,7 +2,7 @@ require 'redcarpet'
 
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin, only: [:create, :update, :destroy]
+  before_action :require_admin, only: [:create, :destroy]
 
   # GET /users
   # GET /users.json
@@ -49,12 +49,14 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'Direct report was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+      unless current_user.admin? || @user.supervisor == current_user
+        if @user.update(user_params)
+          format.html { redirect_to @user, notice: 'Direct report was successfully updated.' }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { render :edit }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
