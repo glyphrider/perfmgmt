@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :meetings
   # belongs_to :supervisor, :class_name => 'User', :foreign_key => 'supervisor_id'
   has_many :reports, :class_name => 'User', :foreign_key => 'supervisor_id'
+  has_many :authored_reviews, :class_name => 'Review', :foreign_key => 'author_id'
+  has_many :reviews, :class_name => 'Review', :foreign_key => 'subject_id'
  
   def supervisor
     if supervisor_id

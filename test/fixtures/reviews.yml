@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author_id: 1
+  subject_id: 
+  engagement_score: 1
+  engagement_notes: MyText
+  collaboration_score: 1
+  collaboration_notes: MyText
+  curiosity_score: 1
+  curiosity_notes: MyText
+  comfort_zone_score: 1
+  comfort_zone_notes: MyText
+  teaming_score: 1
+  teaming_notes: MyText
+  dissertation_score: 1
+  dissertation_notes: MyText
+  concepts_score: 1
+  concepts_notes: MyText
+  practices_score: 1
+  practices_notes: MyText
+  notes: MyText
+
+two:
+  author_id: 1
+  subject_id: 
+  engagement_score: 1
+  engagement_notes: MyText
+  collaboration_score: 1
+  collaboration_notes: MyText
+  curiosity_score: 1
+  curiosity_notes: MyText
+  comfort_zone_score: 1
+  comfort_zone_notes: MyText
+  teaming_score: 1
+  teaming_notes: MyText
+  dissertation_score: 1
+  dissertation_notes: MyText
+  concepts_score: 1
+  concepts_notes: MyText
+  practices_score: 1
+  practices_notes: MyText
+  notes: MyText

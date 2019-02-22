@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reviews</h1>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Subject</th>
+      <th scope="col">Author</th>
+      <th scope="col">Date</th>
+      <th scope="col" class="text-center">View</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reviews.each do |review| %>
+    <tr>
+      <td><%= review.author.name %></td>
+      <td><%= review.subject.name %></td>
+      <td><%= review.created_at.strftime("%m/%d") %></td>
+      <td class="text-center"><%= link_to image_tag("open-iconic/svg/magnifying-glass.svg"), review %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<div>
+<%= link_to 'New Review', new_review_path, :class => "btn btn-secondary" %>
+</div>
+
+<br />

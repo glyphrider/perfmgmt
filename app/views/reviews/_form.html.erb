@@ -1,0 +1,24 @@
+<%= form_for @review do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :subject_id, "Subject", { class: "form-control" } %>
+    <%= f.collection_select :subject_id, User.all, :id, :name, {}, { class: "form-control custom-select custom-select-lg" } %>
+  </div>
+  <%= render 'professional_attitude', review: @review, f: f %>
+
+  <br />
+  <div class="actions">
+    <p><%= f.submit class: "btn btn-primary btn-default" %></p>
+  </div>
+<% end %>

@@ -1,0 +1,91 @@
+    <div class="card-body">
+      <h5>Engagement</h5>
+      <div class="card-text">
+        <p>Engaged, self-organizing, self-driven in day-to-day processes, and enthusiastic about their day-to-day responsibilities</p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">0</th>
+              <td>Fails to meet minimum expectations</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                <p class="mb-0">Learns and adheres to VHT processes (SAFe processes, Agile mindset, etc.)</p>
+                <p class="mb-0">Learns to manage their time</p>
+                <p class="mb-0">Identifies when guidance is needed for a task and seeks proper team members</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>
+                <p class="mb-0">Contributes to VHT processes (SAFe processes, Agile mindset, etc.)</p>
+                <p class="mb-0">Effectively manages their time</p>
+                <p class="mb-0">Offers guidance to other team members</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>
+                <p class="mb-0">Actively contributes to VHT processes (SAFe processes, Agile mindset, etc.) and assists other team members in adhering to our processes</p>
+                <p class="mb-0">Effectively manages their time while assisting other team members as needed</p>
+                <p class="mb-0">Identifies when team members need guidance for a task and assists as needed</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>
+                <p class="mb-0">Champions VHT processes (SAFe processes, Agile mindset, etc.) and instructs other team members about adhering to our processes</p>
+                <p class="mb-0">Effectively manages their time to assist other team members as needed</p>
+                <p class="mb-0">Actively identifies when a team member needs guidance and encourages team members to provide that guidance</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="field form-group">
+        <%= f.label :engagement_score, "Score" %>
+        <div class="row">
+          <div class="col">
+            <%= f.radio_button(:engagement_score,"0",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:engagement_score,"1",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:engagement_score,"2",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:engagement_score,"3",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:engagement_score,"4",{:class => "form-control"}) %>
+          </div>
+          <div class="col text-center">
+            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_engagement_score_clear', type: 'button', onclick: "document.getElementById('review_engagement_score_0').checked = false; document.getElementById('review_engagement_score_1').checked = false; document.getElementById('review_engagement_score_2').checked = false; document.getElementById('review_engagement_score_3').checked = false; document.getElementById('review_engagement_score_4').checked = false;", class: 'btn btn-light' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <%= f.label(:engagement_score_0,"0",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:engagement_score_1,"1",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:engagement_score_2,"2",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:engagement_score_3,"3",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:engagement_score_4,"4",{:class => ""}) %>
+          </div>
+          <div class="col text-center"><sm><i>Clear</i></sm></div>
+        </div>
+      </div>
+  
+      <div class="field form-group">
+        <%= f.label :engagement_notes, "Comments" %>
+        <%= f.text_area :engagement_notes, size: "40x5", class: "form-control" %>
+      </div>

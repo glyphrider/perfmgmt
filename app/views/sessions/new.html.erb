@@ -8,7 +8,7 @@
     <% if current_user.reports.any? %>
       <h2><%= link_to "Meet with Direct Reports", users_path %></h2>
     <% end %>
-    <h2>Peer feedback form</h2>
+    <h2><%= link_to "Peer Feedback", reviews_path %></h2>
     <p><%= link_to "Signout", "/signout", class: "btn btn-primary btn-large" %></p>
 <% else %>
   <p><%= link_to "Sign in with Github", "/auth/github", class: "btn btn-primary btn-large" %></p>

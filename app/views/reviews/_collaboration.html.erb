@@ -1,0 +1,89 @@
+      <h5>Collaboration</h5>
+      <div class="card-text">
+        <p>
+          Participates and possibly organizes training and educational sessions in their area of expertise as business needs arise. Every software developer, across all levels of expertise, should be willing to work collaboratively on a larger team and in paired-programming situations. Stays engaged when paired programming and is willing to observe and drive during paired programming; recognizes when it would be beneficial to pair program for a given task; does not hesitate to help others when needed.
+        </p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">0</th>
+              <td>Fails to meet minimum expectations</td>
+            </tr>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                <p class="mb-0">Seeks out opportunities to be mentored</p>
+                <p class="mb-0">Adheres to collaborative assignments</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>
+                <p class="mb-0">Eager to accept mentorship from other developers -- <i>including less experienced developers</i></p>
+                <p class="mb-0">Puts effort into collaborative assignments and improves team productivity</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>
+                <p class="mb-0">Actively offers mentorship in areas of expertise</p>
+                <p class="mb-0">Champions collaborative assignments and team productivity while uplisfting team members</p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>
+                <p class="mb-0">Encourages mentorship opportunities between team members</p>
+                <p class="mb-0">Identifies and assigns collaborative assignments and improves organizational productivity</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="field form-group">
+        <%= f.label :collaboration_score, "Score" %>
+        <div class="row">
+          <div class="col">
+            <%= f.radio_button(:collaboration_score,"0",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:collaboration_score,"1",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:collaboration_score,"2",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:collaboration_score,"3",{:class => "form-control"}) %>
+          </div>
+          <div class="col">
+            <%= f.radio_button(:collaboration_score,"4",{:class => "form-control"}) %>
+          </div>
+          <div class="col text-center">
+            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_collaboration_score_clear', type: 'button', onclick: "document.getElementById('review_collaboration_score_0').checked = false; document.getElementById('review_collaboration_score_1').checked = false; document.getElementById('review_collaboration_score_2').checked = false; document.getElementById('review_collaboration_score_3').checked = false; document.getElementById('review_collaboration_score_4').checked = false;", class: 'btn btn-light' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <%= f.label(:collaboration_score_0,"0",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:collaboration_score_1,"1",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:collaboration_score_2,"2",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:collaboration_score_3,"3",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:collaboration_score_4,"4",{:class => ""}) %>
+          </div>
+          <div class="col text-center"><sm><i>Clear</i></sm></div>
+        </div>
+      </div>
+  
+      <div class="field form-group">
+        <%= f.label :collaboration_notes, "Comments" %>
+        <%= f.text_area :collaboration_notes, size: "40x5", class: "form-control" %>
+      </div>
+    </div>
