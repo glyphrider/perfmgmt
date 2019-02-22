@@ -16,6 +16,10 @@ class User < ApplicationRecord
   def self.all_reports_with_or_without_a_meeting(current_user)
     current_user.reports.sort_by(&:last_meeting_time)
   end
+
+  def self.all_users_with_or_without_a_meeting
+    User.all.sort_by(&:last_meeting_time)
+  end
   
   def last_meeting_time_for_view
     meetings.any? ? meetings.order('time desc').first.time.strftime("%m/%d %I:%M%p") : "none"

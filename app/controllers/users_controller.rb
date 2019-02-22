@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all_reports_with_or_without_a_meeting(current_user)
+    if current_user.admin?
+      @users = User.all_users_with_or_without_a_meeting
+    else
+      @users = User.all_reports_with_or_without_a_meeting(current_user)
+    end
   end
 
   # GET /users/1
