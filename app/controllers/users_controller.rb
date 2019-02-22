@@ -49,14 +49,17 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      unless current_user.admin? || @user.supervisor == current_user
+      if current_user.admin? || @user.supervisor == current_user
         if @user.update(user_params)
-          format.html { redirect_to @user, notice: 'Direct report was successfully updated.' }
+          format.html { redirect_to @user, notice: 'User successfully updated.' }
           format.json { render :show, status: :ok, location: @user }
         else
           format.html { render :edit }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
+      else
+        format.html { redirect_to @user, notice: 'Update not allowed' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
