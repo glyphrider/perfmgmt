@@ -37,6 +37,12 @@
                 <p class="mb-0">Identifies and assigns collaborative assignments and improves organizational productivity</p>
               </td>
             </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>
+                <p>Vastly exceeds all expectations</p>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -58,8 +64,11 @@
           <div class="col">
             <%= f.radio_button(:collaboration_score,"4",{:class => "form-control"}) %>
           </div>
+          <div class="col">
+            <%= f.radio_button(:collaboration_score,"5",{:class => "form-control"}) %>
+          </div>
           <div class="col text-center">
-            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_collaboration_score_clear', type: 'button', onclick: "document.getElementById('review_collaboration_score_0').checked = false; document.getElementById('review_collaboration_score_1').checked = false; document.getElementById('review_collaboration_score_2').checked = false; document.getElementById('review_collaboration_score_3').checked = false; document.getElementById('review_collaboration_score_4').checked = false;", class: 'btn btn-light' %>
+            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_collaboration_score_clear', type: 'button', onclick: "document.getElementById('review_collaboration_score_0').checked = false; document.getElementById('review_collaboration_score_1').checked = false; document.getElementById('review_collaboration_score_2').checked = false; document.getElementById('review_collaboration_score_3').checked = false; document.getElementById('review_collaboration_score_4').checked = false; document.getElementById('review_collaboration_score_5').checked = false;", class: 'btn btn-light' %>
           </div>
         </div>
         <div class="row">
@@ -77,6 +86,9 @@
           </div>
           <div class="col text-center">
             <%= f.label(:collaboration_score_4,"4",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:collaboration_score_5,"5",{:class => ""}) %>
           </div>
           <div class="col text-center"><sm><i>Clear</i></sm></div>
         </div>

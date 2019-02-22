@@ -40,6 +40,12 @@
                 <p class="mb-0">Actively identifies when a team member needs guidance and encourages team members to provide that guidance</p>
               </td>
             </tr>
+            <tr>
+              <th scope="row">5</td>
+              <td>
+                <p>Vastly exceeds all expectations</p>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -61,8 +67,11 @@
           <div class="col">
             <%= f.radio_button(:engagement_score,"4",{:class => "form-control"}) %>
           </div>
+          <div class="col">
+            <%= f.radio_button(:engagement_score,"5",{:class => "form-control"}) %>
+          </div>
           <div class="col text-center">
-            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_engagement_score_clear', type: 'button', onclick: "document.getElementById('review_engagement_score_0').checked = false; document.getElementById('review_engagement_score_1').checked = false; document.getElementById('review_engagement_score_2').checked = false; document.getElementById('review_engagement_score_3').checked = false; document.getElementById('review_engagement_score_4').checked = false;", class: 'btn btn-light' %>
+            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_engagement_score_clear', type: 'button', onclick: "document.getElementById('review_engagement_score_0').checked = false; document.getElementById('review_engagement_score_1').checked = false; document.getElementById('review_engagement_score_2').checked = false; document.getElementById('review_engagement_score_3').checked = false; document.getElementById('review_engagement_score_4').checked = false; document.getElementById('review_engagement_score_5').checked = false;", class: 'btn btn-light' %>
           </div>
         </div>
         <div class="row">
@@ -80,6 +89,9 @@
           </div>
           <div class="col text-center">
             <%= f.label(:engagement_score_4,"4",{:class => ""}) %>
+          </div>
+          <div class="col text-center">
+            <%= f.label(:engagement_score_5,"5",{:class => ""}) %>
           </div>
           <div class="col text-center"><sm><i>Clear</i></sm></div>
         </div>
