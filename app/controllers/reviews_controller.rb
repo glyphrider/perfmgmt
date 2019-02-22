@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     if current_user.admin?
       @reviews = Review.all
     else
-      @reviews = Review.find_all_by_author_id(current_user.id)
+      @reviews = current_user.authored_reviews
     end
   end
 
