@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :subject_id, "Subject", { class: "form-control" } %>
-    <%= f.collection_select :subject_id, User.all.sort_by(:name), :id, :name, {}, { class: "form-control custom-select custom-select-lg" } %>
+    <%= f.collection_select :subject_id, User.order(:name), :id, :name, {}, { class: "form-control custom-select custom-select-lg" } %>
   </div>
 
   <%= render 'professional_attitude', review: @review, f: f %>
