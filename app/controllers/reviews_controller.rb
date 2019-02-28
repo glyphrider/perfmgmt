@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
     author = current_user
     @review.author = author
+    @subject = User.where.not(id: current_user).order(:name)
   end
 
   # GET /reviews/1/edit
