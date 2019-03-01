@@ -2,99 +2,60 @@
       <h5>Comfort Zone</h5>
       <div class="card-text">
         <p>Willingness to work across domains and teams; desire to pursue unfamiliar tasks</p>
-        <table class="table">
-          <tbody>
-            <tr>
-              <th scope="row">0</th>
-              <td>Fails to meet minimum expectations</td>
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>
-                <p class="mb-0">Open to changing teams upon request</p>
-                <p class="mb-0">Desire to learn and pursue new projects and challenges</p>
-                <p class="mb-0">Inclined to take on unfamiliar tasks that stretch or expand their current skill set</p>
-                <p class="mb-0">Utilizes the <i>Open Space</i> setting to discover cross-team opportunities for collaboration or knowledge sharing</p>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>
-                <p class="mb-0">Welcomes various challenges of unfamiliar tasks and strives to address them in the best manner possible</p>
-                <p class="mb-0">Capable of working across domains and teams in a meaningful way in order to gain knowledge related to a specific task</p>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>
-                <p class="mb-0">Actively pursues new projects and challenges; investigates unfamiliar tasks and works toward understanding issues well enough to devise pragmatic solutions</p>
-                <p class="mb-0">Inspires team members to work across domains or teams to broaden their horizons and derive the most versatile solutions possible</p>
-                <p class="mb-0">Establishes healthy working relationships across the organization in order to facilitate the flow of knowledge across teams</p>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>
-                <p class="mb-0">Coordinates with other teams willingly</p>
-                <p class="mb-0">Provides guidance to all teams to fully understand the topics at hand and drives them to formulate pragmatic solutions</p>
-                <p class="mb-0">Quickly analyzes and interprets difficult tasks or unfamiliar technologies</p>
-                <p class="mb-0">Champions the mentality of a <i>self organizing team</i></p>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">5</td>
-              <td>
-                <p>Vastly exceeds all expectations</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="field form-group">
-        <%= f.label :comfort_zone_score, "Score" %>
-        <div class="row">
-          <div class="col">
-            <%= f.radio_button(:comfort_zone_score,"0",{:class => "form-control"}) %>
-          </div>
-          <div class="col">
-            <%= f.radio_button(:comfort_zone_score,"1",{:class => "form-control"}) %>
-          </div>
-          <div class="col">
-            <%= f.radio_button(:comfort_zone_score,"2",{:class => "form-control"}) %>
-          </div>
-          <div class="col">
-            <%= f.radio_button(:comfort_zone_score,"3",{:class => "form-control"}) %>
-          </div>
-          <div class="col">
-            <%= f.radio_button(:comfort_zone_score,"4",{:class => "form-control"}) %>
-          </div>
-          <div class="col">
-            <%= f.radio_button(:comfort_zone_score,"5",{:class => "form-control"}) %>
-          </div>
-          <div class="col text-center">
-            <%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_comfort_zone_score_clear', type: 'button', onclick: "document.getElementById('review_comfort_zone_score_0').checked = false; document.getElementById('review_comfort_zone_score_1').checked = false; document.getElementById('review_comfort_zone_score_2').checked = false; document.getElementById('review_comfort_zone_score_3').checked = false; document.getElementById('review_comfort_zone_score_4').checked = false; document.getElementById('review_comfort_zone_score_5').checked = false;", class: 'btn btn-light' %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col text-center">
-            <%= f.label(:comfort_zone_score_0,"0",{:class => ""}) %>
-          </div>
-          <div class="col text-center">
-            <%= f.label(:comfort_zone_score_1,"1",{:class => ""}) %>
-          </div>
-          <div class="col text-center">
-            <%= f.label(:comfort_zone_score_2,"2",{:class => ""}) %>
-          </div>
-          <div class="col text-center">
-            <%= f.label(:comfort_zone_score_3,"3",{:class => ""}) %>
-          </div>
-          <div class="col text-center">
-            <%= f.label(:comfort_zone_score_4,"4",{:class => ""}) %>
-          </div>
-          <div class="col text-center">
-            <%= f.label(:comfort_zone_score_5,"5",{:class => ""}) %>
-          </div>
-          <div class="col text-center"><sm><i>Clear</i></sm></div>
+        <div class="field form-group">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row"><%= f.radio_button(:comfort_zone_score,"0",{:style => "min-height: 2rem; min-width: 2rem;", :class => "form-control"}) %></th>
+                <td>Fails to meet minimum expectations</td>
+              </tr>
+              <tr>
+                <th scope="row"><%= f.radio_button(:comfort_zone_score,"1",{:style => "min-height: 2rem; min-width: 2rem;", :class => "form-control"}) %></th>
+                <td>
+                  <p class="mb-0">Open to changing teams upon request</p>
+                  <p class="mb-0">Desire to learn and pursue new projects and challenges</p>
+                  <p class="mb-0">Inclined to take on unfamiliar tasks that stretch or expand their current skill set</p>
+                  <p class="mb-0">Utilizes the <i>Open Space</i> setting to discover cross-team opportunities for collaboration or knowledge sharing</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><%= f.radio_button(:comfort_zone_score,"2",{:style => "min-height: 2rem; min-width: 2rem;", :class => "form-control"}) %></th>
+                <td>
+                  <p class="mb-0">Welcomes various challenges of unfamiliar tasks and strives to address them in the best manner possible</p>
+                  <p class="mb-0">Capable of working across domains and teams in a meaningful way in order to gain knowledge related to a specific task</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><%= f.radio_button(:comfort_zone_score,"3",{:style => "min-height: 2rem; min-width: 2rem;", :class => "form-control"}) %></th>
+                <td>
+                  <p class="mb-0">Actively pursues new projects and challenges; investigates unfamiliar tasks and works toward understanding issues well enough to devise pragmatic solutions</p>
+                  <p class="mb-0">Inspires team members to work across domains or teams to broaden their horizons and derive the most versatile solutions possible</p>
+                  <p class="mb-0">Establishes healthy working relationships across the organization in order to facilitate the flow of knowledge across teams</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><%= f.radio_button(:comfort_zone_score,"4",{:style => "min-height: 2rem; min-width: 2rem;", :class => "form-control"}) %></th>
+                <td>
+                  <p class="mb-0">Coordinates with other teams willingly</p>
+                  <p class="mb-0">Provides guidance to all teams to fully understand the topics at hand and drives them to formulate pragmatic solutions</p>
+                  <p class="mb-0">Quickly analyzes and interprets difficult tasks or unfamiliar technologies</p>
+                  <p class="mb-0">Champions the mentality of a <i>self organizing team</i></p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><%= f.radio_button(:comfort_zone_score,"5",{:style => "min-height: 2rem; min-width: 2rem;", :class => "form-control"}) %></th>
+                <td>
+                  <p>Vastly exceeds all expectations</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-center"><%= button_tag image_tag("open-iconic/svg/ban.svg", size: "16"), id: 'review_comfort_zone_score_clear', type: 'button', onclick: "document.getElementById('review_comfort_zone_score_0').checked = false; document.getElementById('review_comfort_zone_score_1').checked = false; document.getElementById('review_comfort_zone_score_2').checked = false; document.getElementById('review_comfort_zone_score_3').checked = false; document.getElementById('review_comfort_zone_score_4').checked = false; document.getElementById('review_comfort_zone_score_5').checked = false;", class: 'btn btn-link' %></th>
+                <td>
+                  <p>Clear Selection</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
   
