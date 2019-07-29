@@ -11,7 +11,7 @@ pipeline {
     stage('Push container image') {
       steps {
         script {
-          docker.withRegistry('446235720820.dkr.ecr.us-east-1.amazonaws.com/vht-eks-devtest', 'ecr:us-east-1:vhtxdev') {
+          docker.withRegistry('https://446235720820.dkr.ecr.us-east-1.amazonaws.com/vht-eks-devtest', 'ecr:us-east-1:vhtxdev') {
             app.push('latest')
           }
         }
