@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Docker Build') {
       steps {
-        step {
+        script {
           def app = docker.build "perfmgmt"
         }
       }
