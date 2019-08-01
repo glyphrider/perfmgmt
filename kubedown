@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+microk8s.kubectl delete deployment,svc mysql
+microk8s.kubectl delete pvc mysql-pv-claim
+microk8s.kubectl delete pv mysql-pv-volume
