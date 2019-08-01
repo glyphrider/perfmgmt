@@ -1,7 +1,7 @@
 pipeline {
   agent any
-  def app
   stages {
+    def app
     stage('Docker Build') {
       steps {
         script {
