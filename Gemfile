@@ -58,5 +58,5 @@ gem 'bootsnap'
 
 gem 'bootstrap'
 gem 'redcarpet'
-gem 'omniauth-github'
+gem 'omniauth-rails_csrf_protection'
 gem 'octokit'
